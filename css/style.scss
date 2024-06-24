@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+$openSans : "Open Sans", sans-serif;
+$raleway : "Raleway", sans-serif;
+$veryDarkBlue :hsl(243, 87%, 12%);
+$desaturatedBlue:hsl(238, 22%, 44%);
+$brightBlue:hsl(224, 93%, 58%);
+$moderateCyan:hsl(170, 45%, 43%);
+$lightGrayishBlue: hsl(240, 75%, 98%);
+$lightGray: hsl(0, 0%, 75%);
+
+*{
+    margin: 0;
+}
+
+h1, h2{
+    font-size: 40px;
+    font-family: $openSans;
+    line-height: 1.5;
+}
+
+a, p{
+    font-size: 16px;
+    font-family: $raleway;
+}
+
+p{
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+ul{
+    padding-left: 0;
+    list-style: none;
+}
+
+@mixin divContainer ($maxWidth, $pdt, $pdl){
+    max-width: #{$maxWidth}px;
+    margin : auto; 
+    padding: #{$pdt}px $pdl + px;
+}
+
+@mixin btnForm ($radius){
+    background-color: $brightBlue;
+    color: #FFF;
+    border: none;
+    padding: 12px 16px;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    &:hover {
+        background-color: #FFF;
+        color: $brightBlue;
+        transition: all ease 0.2s;
+    }
+}
+
+@mixin grid ($display, $col, $gap){
+    display: $display;
+    grid-template-columns: $col;
+    gap: $gap;
+}
+
+@mixin flex ($display, $gap){
+    display: $display;
+    gap: #{$gap}px;
+}
+
+.container1440{@include divContainer(1440, 0, 15);}
+
+// HEADER
+
+header {
+    .container1440 {
+        @include flex (flex, 0);
+        justify-content: space-between;
+        img {
+            margin: 10px 0;
+        }
+        nav {
+            @include flex(flex, 0);
+            ul{
+                @include flex(flex, 20);
+                align-items: center;
+                a{
+                    &:hover {
+                        color: $moderateCyan;
+                        transition: all ease 0.2s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// FOOTER
+
+footer {
+    background-color: $veryDarkBlue;
+    color: #FFF;
+    #footerContainer{
+        @include divContainer(1440, 100, 15);
+    }
+    .container1440{
+        @include grid(grid, repeat(3, 1fr), 50px);
+        h2{
+            margin-bottom: 20px;
+        }
+        .footerUl {
+            @include grid(grid, repeat(2, 1fr), 50px)
+        }
+        >div{
+            >ul {
+                @include flex(flex, 15);
+                flex-direction: column;
+                a{
+                    color: #FFF;
+                    transition: all 0.2s ease;
+                    font-family: $openSans;
+                    &:hover {
+                        color: $moderateCyan;
+                        transition: all 0.2s ease;
+                    }
+                }
+            }
+        }
+        .footerIcon{
+            @include flex(flex, 30);
+            flex-direction: row;
+            i{
+                border: 1px solid #FFF;
+                border-radius: 21px;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+// MAIN
+
+#presentation{
+    margin: 50px auto;
+    .container1440{
+        @include grid(grid, 1fr 1fr, 30px)
+    }
+    img{
+        width: 100%;
+    }
+    #presentationTxt{
+        @include flex(flex, 20);
+        flex-direction: column;
+        justify-content: center;
+    }
+    form{ 
+        input{
+            padding: 8px 14px;
+            outline: none;
+        }
+        button {
+            @include btnForm(5px);
+        }
+    }
+}
+
+#productive{
+    position: relative;
+    background-color: $lightGrayishBlue;
+    margin-top: 260px;
+    &::before{
+        content: "";
+        background: url(/img/bg-curve-desktop.svg);
+        width: 100%;
+        height: 128px;
+        position: absolute;
+        background-size: cover;
+        object-fit: cover;
+        top: -128px;
+    }
+    .container1440{
+        @include divContainer(1440, 120, 15);
+        @include grid(grid, repeat(2, 1fr), 80px);
+        >img {
+            width: 100%;
+        }
+        #productTxt{
+            @include flex(flex, 20);
+            flex-direction: column;
+            >hgroup {
+                @include flex(flex, 20);
+                flex-direction: column;
+            }
+            >a{
+                border-bottom: 1px solid $moderateCyan;
+                width: fit-content;
+                color: $moderateCyan;
+                transition: all ease 0.2s;
+                @include flex(flex, 10);
+                &:hover {
+                    color: $brightBlue;
+                    transition: all ease 0.2s;
+                }
+            }
+            .cartProduct{
+                background-color: #fff;
+                width: 70%;
+                margin-top: 35px;
+                box-shadow: 0px 1px 14px #e1e1e1;
+                border-radius: 6px;
+                margin-top: 35px;
+                padding: 30px;
+                .kyle{
+                    @include grid(grid,17% auto ,20px);
+                    align-items: center;
+                    margin: 30px 0;
+                    img{
+                        border-radius: 50%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#getEarly{
+    background-color: $desaturatedBlue;
+    color: #FFF;
+    >div{
+        @include divContainer(1440, 100, 15);
+        @include grid(grid, 1fr 1fr, 200px);
+        hgroup{
+            width: 75%;
+        }
+        form{
+            @include flex(flex, 24);
+            flex-direction: column;
+            input{
+                border: 1px solid transparent;
+                border-radius: 4px;
+                outline: none;
+                background-color: #fff;
+                padding: 12px 8px;
+            }
+            button{
+                @include btnForm(4px);
+                margin-right: auto;
+            }
+        }
+    }
+}
+// RESPONSIVE
+
+@media screen and (max-width:1024px){
+    #presentation{
+        .container1440{
+            @include grid(grid, 1fr, 80px);
+        }
+    }
+    #productive{
+        .container1440{
+            @include grid(grid, 1fr, 80px);
+        }
+    }
+    #getEarly{
+        >div{
+            @include grid(grid, 1fr, 80px)
+        }
+    }
+    #footerContainer{
+        @include grid(grid, 1fr, 80px);
+        .footerUl{
+            @include grid(grid, 1fr, 80px);
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    header{
+        .container1440{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    #presentation{
+        form{
+            @include flex(flex, 20);
+            flex-direction: column;
+        }
+    }
+}

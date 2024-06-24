@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+}
+
+h1, h2 {
+  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+a, p {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.container1440 {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0px 15px;
+}
+
+header .container1440 {
+  display: flex;
+  gap: 0px;
+  justify-content: space-between;
+}
+header .container1440 img {
+  margin: 10px 0;
+}
+header .container1440 nav {
+  display: flex;
+  gap: 0px;
+}
+header .container1440 nav ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+header .container1440 nav ul a:hover {
+  color: hsl(170, 45%, 43%);
+  transition: all ease 0.2s;
+}
+
+footer {
+  background-color: hsl(243, 87%, 12%);
+  color: #FFF;
+}
+footer #footerContainer {
+  max-width: 1440px;
+  margin: auto;
+  padding: 100px 15px;
+}
+footer .container1440 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+footer .container1440 h2 {
+  margin-bottom: 20px;
+}
+footer .container1440 .footerUl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+footer .container1440 > div > ul {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+footer .container1440 > div > ul a {
+  color: #FFF;
+  transition: all 0.2s ease;
+  font-family: "Open Sans", sans-serif;
+}
+footer .container1440 > div > ul a:hover {
+  color: hsl(170, 45%, 43%);
+  transition: all 0.2s ease;
+}
+footer .container1440 .footerIcon {
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+}
+footer .container1440 .footerIcon i {
+  border: 1px solid #FFF;
+  border-radius: 21px;
+  padding: 10px;
+}
+
+#presentation {
+  margin: 50px auto;
+}
+#presentation .container1440 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+#presentation img {
+  width: 100%;
+}
+#presentation #presentationTxt {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+#presentation form input {
+  padding: 8px 14px;
+  outline: none;
+}
+#presentation form button {
+  background-color: hsl(224, 93%, 58%);
+  color: #FFF;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+#presentation form button:hover {
+  background-color: #FFF;
+  color: hsl(224, 93%, 58%);
+  transition: all ease 0.2s;
+}
+
+#productive {
+  position: relative;
+  background-color: hsl(240, 75%, 98%);
+  margin-top: 260px;
+}
+#productive::before {
+  content: "";
+  background: url(/img/bg-curve-desktop.svg);
+  width: 100%;
+  height: 128px;
+  position: absolute;
+  background-size: cover;
+  object-fit: cover;
+  top: -128px;
+}
+#productive .container1440 {
+  max-width: 1440px;
+  margin: auto;
+  padding: 120px 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+}
+#productive .container1440 > img {
+  width: 100%;
+}
+#productive .container1440 #productTxt {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+#productive .container1440 #productTxt > hgroup {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+#productive .container1440 #productTxt > a {
+  border-bottom: 1px solid hsl(170, 45%, 43%);
+  width: fit-content;
+  color: hsl(170, 45%, 43%);
+  transition: all ease 0.2s;
+  display: flex;
+  gap: 10px;
+}
+#productive .container1440 #productTxt > a:hover {
+  color: hsl(224, 93%, 58%);
+  transition: all ease 0.2s;
+}
+#productive .container1440 #productTxt .cartProduct {
+  background-color: #fff;
+  width: 70%;
+  margin-top: 35px;
+  box-shadow: 0px 1px 14px #e1e1e1;
+  border-radius: 6px;
+  margin-top: 35px;
+  padding: 30px;
+}
+#productive .container1440 #productTxt .cartProduct .kyle {
+  display: grid;
+  grid-template-columns: 17% auto;
+  gap: 20px;
+  align-items: center;
+  margin: 30px 0;
+}
+#productive .container1440 #productTxt .cartProduct .kyle img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+#getEarly {
+  background-color: hsl(238, 22%, 44%);
+  color: #FFF;
+}
+#getEarly > div {
+  max-width: 1440px;
+  margin: auto;
+  padding: 100px 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 200px;
+}
+#getEarly > div hgroup {
+  width: 75%;
+}
+#getEarly > div form {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+#getEarly > div form input {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  background-color: #fff;
+  padding: 12px 8px;
+}
+#getEarly > div form button {
+  background-color: hsl(224, 93%, 58%);
+  color: #FFF;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  margin-right: auto;
+}
+#getEarly > div form button:hover {
+  background-color: #FFF;
+  color: hsl(224, 93%, 58%);
+  transition: all ease 0.2s;
+}
+
+@media screen and (max-width: 1024px) {
+  #presentation .container1440 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  #productive .container1440 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  #getEarly > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  #footerContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  #footerContainer .footerUl {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  header .container1440 {
+    flex-direction: column;
+    align-items: center;
+  }
+  #presentation form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
